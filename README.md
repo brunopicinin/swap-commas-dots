@@ -1,3 +1,3 @@
 # Swap Commas & Dots
 
-Swap commas and dots in selected text.
+A Raycast extension to swap commas and dots in selected text.
