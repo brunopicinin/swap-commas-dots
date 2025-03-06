@@ -1,9 +1,10 @@
 import { getSelectedText, Clipboard, showToast, Toast } from "@raycast/api";
+import { swapCommasAndDots } from "./utils";
 
 export default async () => {
   try {
     const selectedText = await getSelectedText();
-    const transformedText = transformText(selectedText);
+    const transformedText = swapCommasAndDots(selectedText);
     await Clipboard.paste(transformedText);
   } catch (error) {
     await showToast({
@@ -13,7 +14,3 @@ export default async () => {
     });
   }
 };
-
-function transformText(text: string) {
-  return text.replace(/[.,]/g, (val) => (val === "." ? "," : "."));
-}
